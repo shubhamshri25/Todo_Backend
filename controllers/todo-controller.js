@@ -41,7 +41,7 @@ const updateTodo = async (req, res) => {
     try {
         const { id } = req.params; // Todo ID from URL
         const { title, description, completed } = req.body;
-        const userId = req.user._id; 
+        const userId = req.user._id;
 
         // Find the todo and ensure it belongs to the logged-in user
         const todo = await Todo.findOne({ _id: id, userId });
@@ -66,7 +66,7 @@ const updateTodo = async (req, res) => {
 const deleteTodo = async (req, res) => {
     try {
         const { id } = req.params; // Todo ID from URL
-        const userId = req.user._id; // Retrieved from authMiddleware
+        const userId = req.user._id;
 
         const todo = await Todo.findOne({ _id: id, userId });
 

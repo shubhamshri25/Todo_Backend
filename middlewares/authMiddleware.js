@@ -11,6 +11,7 @@ const authMiddleware = async (req, res, next) => {
     }
 
     try {
+        
         // Verify the token
         const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
 
@@ -19,7 +20,7 @@ const authMiddleware = async (req, res, next) => {
         if (!user) {
             return res.status(404).json({ message: "User not found" });
         }
-        
+
         req.user = user;
         next();
     } catch (error) {

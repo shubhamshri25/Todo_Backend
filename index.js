@@ -13,6 +13,7 @@ app.use(express.json())
 app.get('/', (req, res) => res.send('Todo backend'))
 
 app.use('/api/user', userRoutes);
+
 app.use('/api/todo', todoRoutes);
 
 connectDB().then(() => {

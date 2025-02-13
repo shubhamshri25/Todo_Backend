@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const authMiddleware = require('../middlewares/authMiddleware');
+
 const { createTodo, getTodos, updateTodo, deleteTodo } = require('../controllers/todo-controller');
 
 // creating a todo 
